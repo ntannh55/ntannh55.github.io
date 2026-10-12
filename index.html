@@ -266,6 +266,29 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
  .dots{justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){.slide,.slide.on{transition:none;transform:none}}
+
+/* animación de entrada por slide + barra de progreso */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.slide.on .hero-main>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.slide.on .hero-main>:nth-child(1){animation-delay:.05s}
+.slide.on .hero-main>:nth-child(2){animation-delay:.15s}
+.slide.on .hero-main>:nth-child(3){animation-delay:.27s}
+.slide.on .ficha{animation:pop .75s cubic-bezier(.2,.7,.2,1) .4s both}
+.slide.on .chips li,.slide.on .checks li{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+.slide.on .chips li:nth-child(1),.slide.on .checks li:nth-child(1){animation-delay:.55s}
+.slide.on .chips li:nth-child(2),.slide.on .checks li:nth-child(2){animation-delay:.62s}
+.slide.on .chips li:nth-child(3),.slide.on .checks li:nth-child(3){animation-delay:.69s}
+.slide.on .chips li:nth-child(4),.slide.on .checks li:nth-child(4){animation-delay:.76s}
+.slide.on .chips li:nth-child(5){animation-delay:.83s}
+.nav-s{display:flex;flex-direction:column;gap:10px;min-width:0}
+.prog{height:3px;max-width:180px;background:#dbe3e9;border-radius:999px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--brand);border-radius:999px}
+.hero.run .prog i{animation:fill var(--dur,6s) linear forwards}
+.hero.hold .prog i{animation-play-state:paused}
+@keyframes fill{from{width:0}to{width:100%}}
+@media(max-width:760px){.nav-s{align-items:center}.prog{width:140px}}
+@media(prefers-reduced-motion:reduce){.slide.on .hero-main>*,.slide.on .ficha,.slide.on .chips li,.slide.on .checks li{animation:none}.prog{display:none}}
 </style>
 </head>
 <body>
@@ -287,7 +310,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 <div class="hero-side"><div class="ficha"><div class="k">En obra</div><ul class="checks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bitácora diaria</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Informe semanal con fotos</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pruebas de calidad</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Entrega con planos récord</span></li></ul></div></div>
 </div>
 </div>
-<div class="hero-foot"><div class="btns"><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c.3 2 2.1 4 4.5 4.6l1.2-1.2 1.8.8-.4 1.6c-3.6.3-7.3-3.2-7.4-6.9l1.6-.4.8 1.8z" fill="currentColor"/></svg>Cotizar por WhatsApp</a><a class="b2" href="#servicios">Ver servicios</a></div><div class="dots" role="group" aria-label="Elegir diapositiva"><button class="dot on" type="button" aria-label="Ver diapositiva 1" aria-current="true"></button><button class="dot" type="button" aria-label="Ver diapositiva 2"></button><button class="dot" type="button" aria-label="Ver diapositiva 3"></button></div></div>
+<div class="hero-foot"><div class="btns"><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c.3 2 2.1 4 4.5 4.6l1.2-1.2 1.8.8-.4 1.6c-3.6.3-7.3-3.2-7.4-6.9l1.6-.4.8 1.8z" fill="currentColor"/></svg>Cotizar por WhatsApp</a><a class="b2" href="#servicios">Ver servicios</a></div><div class="nav-s"><div class="dots" role="group" aria-label="Elegir diapositiva"><button class="dot on" type="button" aria-label="Ver diapositiva 1" aria-current="true"></button><button class="dot" type="button" aria-label="Ver diapositiva 2"></button><button class="dot" type="button" aria-label="Ver diapositiva 3"></button></div><div class="prog" aria-hidden="true"><i></i></div></div></div>
 <div class="stats" hidden><div><b data-stat="anios">—</b><span>años de experiencia</span></div><div><b data-stat="proyectos">—</b><span>proyectos entregados</span></div><div><b data-stat="m2">—</b><span>m² diseñados</span></div></div>
 </section>
 <div class="band dark" id="servicios"><div class="sec rv"><span class="k">Servicios</span></div>
@@ -331,18 +354,20 @@ let tk=false;addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFram
 <script>
 (function(){
 const box=document.getElementById('hs');if(!box)return;
-const sl=[...box.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.hero .dot')];
-const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;let i=0,t=null,paused=false;
-function go(n){const prev=i;i=(n+sl.length)%sl.length;if(prev===i)return;sl[prev].classList.remove('on');sl[prev].classList.add('out');sl[prev].setAttribute('aria-hidden','true');setTimeout(()=>sl[prev].classList.remove('out'),650);sl[i].classList.add('on');sl[i].removeAttribute('aria-hidden');dots.forEach((d,k)=>{d.classList.toggle('on',k===i);d.toggleAttribute('aria-current',k===i)})}
-function play(){clearInterval(t);if(rm||paused)return;t=setInterval(()=>go(i+1),6000)}
-dots.forEach((d,k)=>d.addEventListener('click',()=>{go(k);play()}));
-const hero=box.closest('.hero');
-hero.addEventListener('mouseenter',()=>{paused=true;clearInterval(t)});
-hero.addEventListener('mouseleave',()=>{paused=false;play()});
-let x0=null;box.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;paused=true;clearInterval(t)},{passive:true});
-box.addEventListener('touchend',e=>{if(x0!==null){const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1))}x0=null;paused=false;play()});
-document.addEventListener('visibilitychange',()=>{document.hidden?clearInterval(t):play()});
-play();
+const hero=box.closest('.hero'),sl=[...box.querySelectorAll('.slide')],dots=[...hero.querySelectorAll('.dot')];
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches,DUR=6000;let i=0,t=null,left=DUR,start=0,held=false;
+hero.style.setProperty('--dur',DUR+'ms');
+function bar(){hero.classList.remove('run');void hero.offsetWidth;if(!rm)hero.classList.add('run')}
+function go(n){const prev=i;i=(n+sl.length)%sl.length;if(prev!==i){sl[prev].classList.remove('on');sl[prev].classList.add('out');sl[prev].setAttribute('aria-hidden','true');setTimeout(()=>sl[prev].classList.remove('out'),650);sl[i].classList.add('on');sl[i].removeAttribute('aria-hidden');dots.forEach((d,k)=>{d.classList.toggle('on',k===i);d.toggleAttribute('aria-current',k===i)})}left=DUR;bar();arm()}
+function arm(){clearTimeout(t);if(rm||held)return;start=Date.now();t=setTimeout(()=>go(i+1),left)}
+function hold(){if(held)return;held=true;clearTimeout(t);left=Math.max(300,left-(Date.now()-start));hero.classList.add('hold')}
+function resume(){if(!held)return;held=false;hero.classList.remove('hold');arm()}
+dots.forEach((d,k)=>d.addEventListener('click',()=>go(k)));
+hero.addEventListener('mouseenter',hold);hero.addEventListener('mouseleave',resume);
+let x0=null;box.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;hold()},{passive:true});
+box.addEventListener('touchend',e=>{const dx=x0===null?0:e.changedTouches[0].clientX-x0;x0=null;held=false;hero.classList.remove('hold');if(Math.abs(dx)>40)go(i+(dx<0?1:-1));else arm()});
+document.addEventListener('visibilitychange',()=>{document.hidden?hold():resume()});
+bar();arm();
 })();
 </script>
 </body>
