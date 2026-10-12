@@ -210,17 +210,58 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
  header.compact .logo{height:22px}
  header.compact nav a{padding-top:5px;padding-bottom:5px}
 }
+
+/* hero v2 */
+[hidden]{display:none!important}
+.hero{align-items:center}
+.hero-main{min-width:0}
+.hero-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+.hero-img{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 40px -16px rgba(20,40,54,.35)}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.wa-btn{display:inline-flex;align-items:center;gap:8px}
+.wa-btn svg{width:18px;height:18px}
+.ficha{line-height:1.5}
+.chips{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.75);border:1px solid #dde5eb;border-radius:999px;padding:6px 12px 6px 9px;font-size:13px;color:var(--ink)}
+.chips svg{width:16px;height:16px;color:var(--brand);flex:0 0 auto}
+.stats{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap}
+.stats div{display:flex;flex-direction:column}
+.stats b{font-weight:300;font-size:30px;color:var(--brand);line-height:1.1}
+.stats span{font-size:12.5px;color:var(--muted)}
+.sign{display:flex;align-items:center;gap:12px;margin:26px 0 0;font-size:13.5px;color:var(--muted);line-height:1.4}
+.sign b{color:var(--ink);font-weight:600}
+.av{width:40px;height:40px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600;letter-spacing:.04em;flex:0 0 auto}
+@media(max-width:760px){
+ .hero{gap:20px;padding:22px 18px!important}
+ .hero h1{font-size:28px;margin:10px 0}
+ .hero .lead{font-size:15px}
+ .btns{margin-top:16px}
+ .btns{gap:8px}
+ .btns a{flex:1 1 100%;text-align:center;justify-content:center;padding:12px 14px}
+ .btns a.b2{padding:9px 14px}
+ .sign{margin-top:18px}
+ .chips li{font-size:12.5px;padding:5px 10px 5px 8px}
+}
 </style>
 </head>
 <body>
 <div class="page"><svg class="wm bgl" viewBox="0 0 1653 1909" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c0cf"/><stop offset="1" stop-color="#d9e4eb"/></linearGradient></defs><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" fill-rule="evenodd" fill="url(#g)"/></svg>
 <div class="w">
 <header id="top"><svg class="logo" viewBox="0 0 338.6 100" role="img" aria-label="Planificar Proyectos"><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" transform="scale(0.052383)" fill-rule="evenodd" fill="currentColor"/><text x="102.6" y="46" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="400" font-size="33" fill="currentColor">PLANIFICAR</text><text x="102.6" y="86" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="600" font-size="33" fill="currentColor">PROYECTOS</text></svg><nav><a class="home" href="#top" aria-label="Inicio"><svg class="hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Inicio</span></a><a href="#servicios">Servicios</a><a href="#practicas">Cómo trabajamos</a><a class="cta" href="#contacto">Contacto</a></nav></header>
-<section class="hero"><div><div class="k ld" style="--d:0">Arquitectura · Ingeniería · Construcción</div>
-<h1 class="ld" style="--d:1">Diseño, consultoría y construcción de proyectos arquitectónicos</h1>
-<p class="lead ld" style="--d:2">Diseños técnicos, BIM, obra civil e interventoría con un solo equipo responsable, desde el estudio previo hasta la entrega.</p>
-<div class="btns ld" style="--d:3"><a class="b1" href="#contacto">Solicitar cotización</a><a class="b2" href="#servicios">Ver servicios</a></div></div>
-<div class="ficha ld" style="--d:4"><div class="k" style="margin-bottom:6px">Especialidades</div>Redes hidrosanitarias<br>Diseño estructural<br>Redes de gas<br>Red contra incendios y detección<br>Coordinación BIM</div></section>
+<section class="hero">
+<div class="hero-main">
+<div class="k ld" style="--d:0">Arquitectura · Ingeniería · Construcción</div>
+<h1 class="ld" style="--d:1">De la idea a la obra terminada, con un solo equipo responsable</h1>
+<p class="lead ld" style="--d:2">Diseño arquitectónico, diseños técnicos, BIM, construcción e interventoría para proyectos residenciales, comerciales e institucionales.</p>
+<div class="btns ld" style="--d:3"><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c.3 2 2.1 4 4.5 4.6l1.2-1.2 1.8.8-.4 1.6c-3.6.3-7.3-3.2-7.4-6.9l1.6-.4.8 1.8z" fill="currentColor"/></svg>Cotizar por WhatsApp</a><a class="b2" href="#servicios">Ver servicios</a></div>
+<div class="stats ld" style="--d:4" hidden><div><b data-stat="anios">—</b><span>años de experiencia</span></div><div><b data-stat="proyectos">—</b><span>proyectos entregados</span></div><div><b data-stat="m2">—</b><span>m² diseñados</span></div></div>
+<p class="sign ld" style="--d:4"><span class="av" aria-hidden="true">NT</span><span>Dirigido por <b>Arq. Nicolás de la Torre</b><br>Especialista en Gerencia de Proyectos</span></p>
+</div>
+<div class="hero-side ld" style="--d:3">
+<figure class="hero-img" hidden><img src="" alt="Proyecto de Planificar Proyectos"></figure>
+<div class="ficha"><div class="k">Especialidades</div><ul class="chips"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Redes hidrosanitarias</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-5 8 5v12M4 12h16M4 16h16M9 20V8M15 20V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Diseño estructural</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Redes de gas</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a4 4 0 0 1 4 4v2h2v4a6 6 0 0 1-12 0V9h2V7a4 4 0 0 1 4-4zM12 13v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Red contra incendios y detección</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Coordinación BIM</span></li></ul></div>
+</div>
+</section>
 <div class="band dark" id="servicios"><div class="sec rv"><span class="k">Servicios</span></div>
 <div class="grid"><div class="sv rv" style="--d:0"><span class="n">01</span><div><h3>Diseño técnico</h3><p>Redes hidráulicas, diseño estructural, gas, red contra incendios y detección.</p></div></div><div class="sv rv" style="--d:1"><span class="n">02</span><div><h3>Diseño arquitectónico y BIM</h3><p>Proyectos residenciales, comerciales e institucionales, coordinados en modelo BIM.</p></div></div><div class="sv rv" style="--d:2"><span class="n">03</span><div><h3>Construcción y adecuaciones</h3><p>Obra civil, remodelaciones y adecuaciones locativas.</p></div></div><div class="sv rv" style="--d:0"><span class="n">04</span><div><h3>Interventoría y supervisión</h3><p>Control técnico, de calidad y presupuestal de la obra.</p></div></div><div class="sv rv" style="--d:1"><span class="n">05</span><div><h3>Servicios complementarios</h3><p>Metalmecánica y ventanería para proyectos nuevos y existentes.</p></div></div><div class="sv rv" style="--d:2"><span class="n">06</span><div><h3>Consultoría</h3><p>Estudios previos, presupuestos y apoyo a la estructuración de proyectos.</p></div></div></div>
 <a class="up" href="#top">↑ Volver al menú</a></div>
