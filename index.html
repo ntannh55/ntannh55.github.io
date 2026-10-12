@@ -131,7 +131,7 @@ html.embed header{position:relative}
 .band::before{display:none!important}
 .band.dark,.band.deep{color:var(--ink)}
 .band{padding-top:40px}
-.glass,.band.dark .grid,.band.deep .contact,.band.tint .bp li,.ficha{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.9);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 2px rgba(20,40,54,.05),0 10px 30px rgba(20,40,54,.07);border-radius:18px}
+.glass,.band.dark .grid,.band.deep .contact,.band.tint .bp li,.ficha{background:rgba(214,230,241,.5);border:1px solid rgba(225,238,247,.9);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 2px rgba(20,40,54,.05),0 10px 30px rgba(20,40,54,.07);border-radius:18px}
 .band.dark .grid{padding:8px 28px 8px;margin-bottom:24px;column-gap:40px}
 .band.dark .k{color:var(--faint)}.band.dark .sec::after{background:var(--line)}
 .band.dark .sv{border-color:rgba(20,40,54,.08)}
@@ -162,15 +162,15 @@ html.embed .wm.bgl{position:absolute;top:50%;height:min(80%,1700px)}
 body{background:#f1f5f7}
 header{background:rgba(244,247,249,.97);box-shadow:0 0 0 100vmax rgba(244,247,249,.97)}
 header.scrolled{box-shadow:0 0 0 100vmax rgba(244,247,249,.97),0 10px 24px -14px rgba(20,40,54,.35)}
-.hero,.band{position:relative;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.95);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border-radius:24px;box-shadow:0 2px 4px rgba(20,40,54,.04),0 24px 60px -12px rgba(20,40,54,.16)}
-.hero{margin-top:32px;padding:44px clamp(20px,4vw,44px)}
+.hero,.band{position:relative;background:rgba(210,228,240,.38);border:1px solid rgba(225,238,247,.9);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border-radius:24px;box-shadow:0 2px 4px rgba(20,40,54,.04),0 24px 60px -12px rgba(20,40,54,.16)}
+.hero{margin-top:32px;padding:64px clamp(20px,4vw,44px);min-height:min(74vh,660px);display:flex;flex-direction:column;justify-content:center}
 .band{margin-top:32px;padding:32px clamp(20px,4vw,44px) 8px!important}
 .band.deep{margin-bottom:32px}
 .band.dark .grid,.band.deep .contact,.ficha{background:transparent;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-radius:0}
 .band.dark .grid{padding:0;margin:0 0 8px}
 .band.deep .contact{padding:8px 0 24px;margin:0}
-.ficha{background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.95);border-radius:18px}
-.band.tint .bp li{background:rgba(255,255,255,.62);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 2px rgba(20,40,54,.04),0 6px 18px rgba(20,40,54,.06)}
+.ficha{background:rgba(214,230,241,.55);border:1px solid rgba(225,238,247,.95);border-radius:18px}
+.band.tint .bp li{background:rgba(214,230,241,.56);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 2px rgba(20,40,54,.04),0 6px 18px rgba(20,40,54,.06)}
 .band.tint .bp{padding-bottom:24px}
 .up{margin:0 0 24px}
 .band.deep footer{padding-bottom:20px}
@@ -265,7 +265,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
  .hero-foot{grid-template-columns:1fr;gap:14px;margin-top:16px}
  .dots{justify-content:center}
 }
-@media(prefers-reduced-motion:reduce){.slide,.slide.on{transition:none;transform:none}}
+@media(prefers-reduced-motion:reduce){.slide,.slide.on,.slide.out{transform:none;transition:opacity .5s ease,visibility 0s .5s}.slide.on{transition:opacity .5s ease,visibility 0s}}
 
 /* animación de entrada por slide + barra de progreso */
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -288,7 +288,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 .hero.hold .prog i{animation-play-state:paused}
 @keyframes fill{from{width:0}to{width:100%}}
 @media(max-width:760px){.nav-s{align-items:center}.prog{width:140px}}
-@media(prefers-reduced-motion:reduce){.slide.on .hero-main>*,.slide.on .ficha,.slide.on .chips li,.slide.on .checks li{animation:none}.prog{display:none}}
+@media(prefers-reduced-motion:reduce){.slide.on .hero-main>*,.slide.on .ficha,.slide.on .chips li,.slide.on .checks li{animation:none}}
 </style>
 </head>
 <body>
@@ -357,9 +357,9 @@ const box=document.getElementById('hs');if(!box)return;
 const hero=box.closest('.hero'),sl=[...box.querySelectorAll('.slide')],dots=[...hero.querySelectorAll('.dot')];
 const rm=matchMedia('(prefers-reduced-motion: reduce)').matches,DUR=6000;let i=0,t=null,left=DUR,start=0,held=false;
 hero.style.setProperty('--dur',DUR+'ms');
-function bar(){hero.classList.remove('run');void hero.offsetWidth;if(!rm)hero.classList.add('run')}
+function bar(){hero.classList.remove('run');void hero.offsetWidth;hero.classList.add('run')}
 function go(n){const prev=i;i=(n+sl.length)%sl.length;if(prev!==i){sl[prev].classList.remove('on');sl[prev].classList.add('out');sl[prev].setAttribute('aria-hidden','true');setTimeout(()=>sl[prev].classList.remove('out'),650);sl[i].classList.add('on');sl[i].removeAttribute('aria-hidden');dots.forEach((d,k)=>{d.classList.toggle('on',k===i);d.toggleAttribute('aria-current',k===i)})}left=DUR;bar();arm()}
-function arm(){clearTimeout(t);if(rm||held)return;start=Date.now();t=setTimeout(()=>go(i+1),left)}
+function arm(){clearTimeout(t);if(held)return;start=Date.now();t=setTimeout(()=>go(i+1),left)}
 function hold(){if(held)return;held=true;clearTimeout(t);left=Math.max(300,left-(Date.now()-start));hero.classList.add('hold')}
 function resume(){if(!held)return;held=false;hero.classList.remove('hold');arm()}
 dots.forEach((d,k)=>d.addEventListener('click',()=>go(k)));
