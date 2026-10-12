@@ -242,25 +242,53 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
  .sign{margin-top:18px}
  .chips li{font-size:12.5px;padding:5px 10px 5px 8px}
 }
+
+/* hero carrusel */
+.hero{display:block!important}
+.slides{display:grid;touch-action:pan-y}
+.slide{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s .6s}
+.slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.slide.out{transform:translateX(-18px)}
+.ht{font-weight:300;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-.015em;margin:16px 0;color:var(--brand);text-wrap:balance}
+.checks{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:9px}
+.checks li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink)}
+.checks svg{width:18px;height:18px;color:var(--brand);flex:0 0 auto;background:#e6eef3;border-radius:50%;padding:2px}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:26px}
+.hero-foot .btns{margin-top:0}
+.dots{display:flex;gap:8px;justify-content:flex-start}
+.dot{width:9px;height:9px;padding:0;border-radius:999px;background:#c9d4dc;transition:width .3s,background .3s}
+.dot.on{width:28px;background:var(--brand)}
+.dot:hover{background:#9fb2c0}
+@media(max-width:760px){
+ .slide{grid-template-columns:1fr;gap:16px}
+ .ht{font-size:28px;margin:10px 0}
+ .hero-foot{grid-template-columns:1fr;gap:14px;margin-top:16px}
+ .dots{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){.slide,.slide.on{transition:none;transform:none}}
 </style>
 </head>
 <body>
 <div class="page"><svg class="wm bgl" viewBox="0 0 1653 1909" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c0cf"/><stop offset="1" stop-color="#d9e4eb"/></linearGradient></defs><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" fill-rule="evenodd" fill="url(#g)"/></svg>
 <div class="w">
 <header id="top"><svg class="logo" viewBox="0 0 338.6 100" role="img" aria-label="Planificar Proyectos"><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" transform="scale(0.052383)" fill-rule="evenodd" fill="currentColor"/><text x="102.6" y="46" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="400" font-size="33" fill="currentColor">PLANIFICAR</text><text x="102.6" y="86" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="600" font-size="33" fill="currentColor">PROYECTOS</text></svg><nav><a class="home" href="#top" aria-label="Inicio"><svg class="hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Inicio</span></a><a href="#servicios">Servicios</a><a href="#practicas">Cómo trabajamos</a><a class="cta" href="#contacto">Contacto</a></nav></header>
-<section class="hero">
-<div class="hero-main">
-<div class="k ld" style="--d:0">Arquitectura · Ingeniería · Construcción</div>
-<h1 class="ld" style="--d:1">De la idea a la obra terminada, con un solo equipo responsable</h1>
-<p class="lead ld" style="--d:2">Diseño arquitectónico, diseños técnicos, BIM, construcción e interventoría para proyectos residenciales, comerciales e institucionales.</p>
-<div class="btns ld" style="--d:3"><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c.3 2 2.1 4 4.5 4.6l1.2-1.2 1.8.8-.4 1.6c-3.6.3-7.3-3.2-7.4-6.9l1.6-.4.8 1.8z" fill="currentColor"/></svg>Cotizar por WhatsApp</a><a class="b2" href="#servicios">Ver servicios</a></div>
-<div class="stats ld" style="--d:4" hidden><div><b data-stat="anios">—</b><span>años de experiencia</span></div><div><b data-stat="proyectos">—</b><span>proyectos entregados</span></div><div><b data-stat="m2">—</b><span>m² diseñados</span></div></div>
-<p class="sign ld" style="--d:4"><span class="av" aria-hidden="true">NT</span><span>Dirigido por <b>Arq. Nicolás de la Torre</b><br>Especialista en Gerencia de Proyectos</span></p>
+<section class="hero ld" style="--d:1" aria-roledescription="carrusel" aria-label="Presentación de la empresa">
+<div class="slides" id="hs">
+<div class="slide on" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
+<div class="hero-main"><div class="k">Arquitectura · Ingeniería · Construcción</div><h1 class="ht">De la idea a la obra terminada, con un solo equipo responsable</h1><p class="lead">Diseño arquitectónico, diseños técnicos, BIM, construcción e interventoría para proyectos residenciales, comerciales e institucionales.</p></div>
+<div class="hero-side"><div class="ficha"><div class="k">Especialidades</div><ul class="chips"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Redes hidrosanitarias</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-5 8 5v12M4 12h16M4 16h16M9 20V8M15 20V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Diseño estructural</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Redes de gas</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a4 4 0 0 1 4 4v2h2v4a6 6 0 0 1-12 0V9h2V7a4 4 0 0 1 4-4zM12 13v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Red contra incendios y detección</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Coordinación BIM</span></li></ul></div></div>
 </div>
-<div class="hero-side ld" style="--d:3">
-<figure class="hero-img" hidden><img src="" alt="Proyecto de Planificar Proyectos"></figure>
-<div class="ficha"><div class="k">Especialidades</div><ul class="chips"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Redes hidrosanitarias</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-5 8 5v12M4 12h16M4 16h16M9 20V8M15 20V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Diseño estructural</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Redes de gas</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a4 4 0 0 1 4 4v2h2v4a6 6 0 0 1-12 0V9h2V7a4 4 0 0 1 4-4zM12 13v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Red contra incendios y detección</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Coordinación BIM</span></li></ul></div>
+<div class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 3" aria-hidden="true">
+<div class="hero-main"><div class="k">Diseño técnico</div><h2 class="ht">Diseños técnicos coordinados en un solo modelo BIM</h2><p class="lead">Redes hidrosanitarias, estructura, gas y red contra incendios trabajan en el mismo modelo, para que las interferencias se resuelvan antes de llegar a obra.</p></div>
+<div class="hero-side"><div class="ficha"><div class="k">Entregables</div><ul class="checks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Planos técnicos</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Memorias de cálculo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cantidades de obra</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Presupuesto</span></li></ul></div></div>
 </div>
+<div class="slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 3" aria-hidden="true">
+<div class="hero-main"><div class="k">Construcción e interventoría</div><h2 class="ht">Construimos y supervisamos con control técnico y presupuestal</h2><p class="lead">Obra civil, adecuaciones locativas, metalmecánica y ventanería, con seguimiento continuo de calidad, tiempos y costos.</p></div>
+<div class="hero-side"><div class="ficha"><div class="k">En obra</div><ul class="checks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bitácora diaria</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Informe semanal con fotos</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pruebas de calidad</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Entrega con planos récord</span></li></ul></div></div>
+</div>
+</div>
+<div class="hero-foot"><div class="btns"><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c.3 2 2.1 4 4.5 4.6l1.2-1.2 1.8.8-.4 1.6c-3.6.3-7.3-3.2-7.4-6.9l1.6-.4.8 1.8z" fill="currentColor"/></svg>Cotizar por WhatsApp</a><a class="b2" href="#servicios">Ver servicios</a></div><div class="dots" role="group" aria-label="Elegir diapositiva"><button class="dot on" type="button" aria-label="Ver diapositiva 1" aria-current="true"></button><button class="dot" type="button" aria-label="Ver diapositiva 2"></button><button class="dot" type="button" aria-label="Ver diapositiva 3"></button></div></div>
+<div class="stats" hidden><div><b data-stat="anios">—</b><span>años de experiencia</span></div><div><b data-stat="proyectos">—</b><span>proyectos entregados</span></div><div><b data-stat="m2">—</b><span>m² diseñados</span></div></div>
 </section>
 <div class="band dark" id="servicios"><div class="sec rv"><span class="k">Servicios</span></div>
 <div class="grid"><div class="sv rv" style="--d:0"><span class="n">01</span><div><h3>Diseño técnico</h3><p>Redes hidráulicas, diseño estructural, gas, red contra incendios y detección.</p></div></div><div class="sv rv" style="--d:1"><span class="n">02</span><div><h3>Diseño arquitectónico y BIM</h3><p>Proyectos residenciales, comerciales e institucionales, coordinados en modelo BIM.</p></div></div><div class="sv rv" style="--d:2"><span class="n">03</span><div><h3>Construcción y adecuaciones</h3><p>Obra civil, remodelaciones y adecuaciones locativas.</p></div></div><div class="sv rv" style="--d:0"><span class="n">04</span><div><h3>Interventoría y supervisión</h3><p>Control técnico, de calidad y presupuestal de la obra.</p></div></div><div class="sv rv" style="--d:1"><span class="n">05</span><div><h3>Servicios complementarios</h3><p>Metalmecánica y ventanería para proyectos nuevos y existentes.</p></div></div><div class="sv rv" style="--d:2"><span class="n">06</span><div><h3>Consultoría</h3><p>Estudios previos, presupuestos y apoyo a la estructuración de proyectos.</p></div></div></div>
@@ -298,6 +326,23 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 const links=[...document.querySelectorAll('nav a[href^="#"]')];
 function act(){const y=hdr.getBoundingClientRect().bottom+40;let cur=null;links.forEach(a=>{const id=a.getAttribute('href').slice(1);if(id==='top'){if(!cur)cur=a;return}const t=document.getElementById(id);if(t&&t.getBoundingClientRect().top<=y)cur=a});if(sc.scrollTop>=maxY()-4&&maxY()>0)cur=links[links.length-1];links.forEach(a=>a.classList.toggle('on',a===cur));hdr.classList.toggle('scrolled',sc.scrollTop>8);hdr.classList.toggle('compact',sc.scrollTop>8)}
 let tk=false;addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(()=>{act();tk=false})}},{passive:true});act();
+})();
+</script>
+<script>
+(function(){
+const box=document.getElementById('hs');if(!box)return;
+const sl=[...box.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.hero .dot')];
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;let i=0,t=null,paused=false;
+function go(n){const prev=i;i=(n+sl.length)%sl.length;if(prev===i)return;sl[prev].classList.remove('on');sl[prev].classList.add('out');sl[prev].setAttribute('aria-hidden','true');setTimeout(()=>sl[prev].classList.remove('out'),650);sl[i].classList.add('on');sl[i].removeAttribute('aria-hidden');dots.forEach((d,k)=>{d.classList.toggle('on',k===i);d.toggleAttribute('aria-current',k===i)})}
+function play(){clearInterval(t);if(rm||paused)return;t=setInterval(()=>go(i+1),6000)}
+dots.forEach((d,k)=>d.addEventListener('click',()=>{go(k);play()}));
+const hero=box.closest('.hero');
+hero.addEventListener('mouseenter',()=>{paused=true;clearInterval(t)});
+hero.addEventListener('mouseleave',()=>{paused=false;play()});
+let x0=null;box.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;paused=true;clearInterval(t)},{passive:true});
+box.addEventListener('touchend',e=>{if(x0!==null){const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1))}x0=null;paused=false;play()});
+document.addEventListener('visibilitychange',()=>{document.hidden?clearInterval(t):play()});
+play();
 })();
 </script>
 </body>
