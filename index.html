@@ -41,7 +41,7 @@ h1{font-weight:300;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spaci
 .b1{background:var(--brand);color:var(--brand-ink);border-radius:10px;padding:13px 24px}
 .b2{background:var(--soft);color:var(--ink);border-radius:10px;padding:13px 24px}
 .b1:hover{opacity:.9}.b2:hover{background:var(--line)}
-.ficha{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:22px 24px;font-size:13.5px;color:var(--muted);line-height:1.8}
+.ficha{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:28px 28px;font-size:13.5px;color:var(--muted);line-height:1.8}
 .sec{display:flex;align-items:center;gap:12px;margin:8px 0 4px;scroll-margin-top:20px}
 .sec::after{content:"";flex:1;height:1px;background:var(--line)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));column-gap:40px;padding-bottom:48px}
@@ -131,7 +131,7 @@ html.embed header{position:relative}
 .band::before{display:none!important}
 .band.dark,.band.deep{color:var(--ink)}
 .band{padding-top:40px}
-.glass,.band.dark .grid,.band.deep .contact,.band.tint .bp li,.ficha{background:rgba(214,230,241,.5);border:1px solid rgba(225,238,247,.9);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 2px rgba(20,40,54,.05),0 10px 30px rgba(20,40,54,.07);border-radius:18px}
+.glass,.band.dark .grid,.band.deep .contact,.band.tint .bp li,.ficha{background:rgba(186,215,236,.6);border:1px solid rgba(205,228,243,.9);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 2px rgba(20,40,54,.05),0 10px 30px rgba(20,40,54,.07);border-radius:18px}
 .band.dark .grid{padding:8px 28px 8px;margin-bottom:24px;column-gap:40px}
 .band.dark .k{color:var(--faint)}.band.dark .sec::after{background:var(--line)}
 .band.dark .sv{border-color:rgba(20,40,54,.08)}
@@ -162,15 +162,15 @@ html.embed .wm.bgl{position:absolute;top:50%;height:min(80%,1700px)}
 body{background:#f1f5f7}
 header{background:rgba(244,247,249,.97);box-shadow:0 0 0 100vmax rgba(244,247,249,.97)}
 header.scrolled{box-shadow:0 0 0 100vmax rgba(244,247,249,.97),0 10px 24px -14px rgba(20,40,54,.35)}
-.hero,.band{position:relative;background:rgba(210,228,240,.38);border:1px solid rgba(225,238,247,.9);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border-radius:24px;box-shadow:0 2px 4px rgba(20,40,54,.04),0 24px 60px -12px rgba(20,40,54,.16)}
-.hero{margin-top:32px;padding:64px clamp(20px,4vw,44px);min-height:min(74vh,660px);display:flex;flex-direction:column;justify-content:center}
+.hero,.band{position:relative;background:rgba(182,212,235,.48);border:1px solid rgba(205,228,243,.9);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border-radius:24px;box-shadow:0 2px 4px rgba(20,40,54,.04),0 24px 60px -12px rgba(20,40,54,.16)}
+.hero{margin-top:32px;padding:56px clamp(20px,4vw,44px) 48px;min-height:min(56vh,540px);display:flex;flex-direction:column;justify-content:center;gap:44px}
 .band{margin-top:32px;padding:32px clamp(20px,4vw,44px) 8px!important}
 .band.deep{margin-bottom:32px}
 .band.dark .grid,.band.deep .contact,.ficha{background:transparent;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-radius:0}
 .band.dark .grid{padding:0;margin:0 0 8px}
 .band.deep .contact{padding:8px 0 24px;margin:0}
-.ficha{background:rgba(214,230,241,.55);border:1px solid rgba(225,238,247,.95);border-radius:18px}
-.band.tint .bp li{background:rgba(214,230,241,.56);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 2px rgba(20,40,54,.04),0 6px 18px rgba(20,40,54,.06)}
+.ficha{background:rgba(186,215,236,.65);border:1px solid rgba(205,228,243,.95);border-radius:18px}
+.band.tint .bp li{background:rgba(186,215,236,.66);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 2px rgba(20,40,54,.04),0 6px 18px rgba(20,40,54,.06)}
 .band.tint .bp{padding-bottom:24px}
 .up{margin:0 0 24px}
 .band.deep footer{padding-bottom:20px}
@@ -232,7 +232,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 .sign b{color:var(--ink);font-weight:600}
 .av{width:40px;height:40px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600;letter-spacing:.04em;flex:0 0 auto}
 @media(max-width:760px){
- .hero{gap:20px;padding:22px 18px!important}
+ .hero{gap:20px;padding:22px 18px!important;min-height:auto}
  .hero h1{font-size:28px;margin:10px 0}
  .hero .lead{font-size:15px}
  .btns{margin-top:16px}
@@ -244,16 +244,16 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 }
 
 /* hero carrusel */
-.hero{display:block!important}
+.hero{display:flex!important;align-items:stretch}
 .slides{display:grid;touch-action:pan-y}
-.slide{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s .6s}
+.slide{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s .6s}
 .slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s}
 .slide.out{transform:translateX(-18px)}
 .ht{font-weight:300;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-.015em;margin:16px 0;color:var(--brand);text-wrap:balance}
 .checks{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:9px}
 .checks li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink)}
 .checks svg{width:18px;height:18px;color:var(--brand);flex:0 0 auto;background:#e6eef3;border-radius:50%;padding:2px}
-.hero-foot{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:26px}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:0}
 .hero-foot .btns{margin-top:0}
 .dots{display:flex;gap:8px;justify-content:flex-start}
 .dot{width:9px;height:9px;padding:0;border-radius:999px;background:#c9d4dc;transition:width .3s,background .3s}
