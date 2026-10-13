@@ -186,12 +186,12 @@ nav .cta.on{box-shadow:0 0 0 2px #f1f5f7,0 0 0 4px var(--brand)}
 @media(max-width:760px){
  header{flex-direction:column;align-items:stretch;gap:10px;padding-block:12px}
  header .logo{height:32px;align-self:flex-start}
- nav{display:flex!important;background:var(--seg)!important;padding:4px!important;font-size:10.5px;width:100%;min-width:0}
- .nav-scroll{flex:1 1 auto;min-width:0;display:flex;justify-content:space-between}
- nav a:not(.cta){display:block!important}
- nav a{padding:7px 4px;text-align:center;white-space:nowrap;flex:0 1 auto}
- nav .cta{padding:7px 9px;flex:0 0 auto}
- nav .home{padding:7px 7px!important}
+ nav{display:flex!important;align-items:stretch;background:var(--seg)!important;padding:5px!important;font-size:12px;width:100%;min-width:0;min-height:50px}
+ .nav-scroll{flex:1 1 auto;min-width:0;display:flex;align-items:stretch;justify-content:space-between}
+ nav a{display:flex!important;align-items:center;justify-content:center}
+ nav a{padding:0 4px;text-align:center;white-space:nowrap;flex:0 1 auto;line-height:1}
+ nav .cta{padding:0 9px;flex:0 0 auto;margin-left:2px}
+ nav .home{padding:0!important;width:32px;height:32px;flex:0 0 auto!important;align-self:center;border-radius:50%!important}
 }
 
 html,body{margin:0}
