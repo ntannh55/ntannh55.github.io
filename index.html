@@ -30,8 +30,9 @@ header{display:flex;justify-content:space-between;align-items:center;padding-blo
 button{font:inherit;cursor:pointer;border:0}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-nav{display:flex;background:var(--seg);border-radius:999px;padding:4px;font-weight:500;font-size:14px;flex-wrap:wrap}
-nav a{padding:8px 20px;border-radius:999px;color:var(--muted)}
+nav{display:flex;align-items:center;background:var(--seg);border-radius:999px;padding:4px;font-weight:500;font-size:14px}
+.nav-scroll{display:flex;min-width:0}
+nav a{padding:8px 20px;border-radius:999px;color:var(--muted);flex:0 0 auto}
 nav a:hover{color:var(--ink)}
 nav .cta{background:var(--brand);color:var(--brand-ink)}
 .hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:end;padding-block:48px}
@@ -185,9 +186,11 @@ nav .cta.on{box-shadow:0 0 0 2px #f1f5f7,0 0 0 4px var(--brand)}
 @media(max-width:760px){
  header{flex-direction:column;align-items:stretch;gap:10px;padding-block:12px}
  header .logo{height:32px;align-self:flex-start}
- nav{display:flex!important;background:var(--seg)!important;padding:3px!important;justify-content:space-between;font-size:13px}
+ nav{display:flex!important;background:var(--seg)!important;padding:4px!important;font-size:13px;width:100%;min-width:0}
+ .nav-scroll{flex:1 1 auto;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .nav-scroll::-webkit-scrollbar{display:none}
  nav a:not(.cta){display:block!important}
- nav a{padding:7px 10px;text-align:center;flex:1 1 auto}
+ nav a{padding:8px 14px;text-align:center;white-space:nowrap}
 }
 
 html,body{margin:0}
@@ -303,7 +306,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 .pcard{position:relative;flex:0 0 auto;width:min(240px,70vw);border-radius:16px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:flex-end;padding:14px;text-align:left;box-shadow:var(--shadow);scroll-snap-align:start;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
 .pcard:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.04),0 16px 36px rgba(0,0,0,.09)}
 .pthumb{position:absolute;inset:0;background:#0e1c26}
-.pthumb img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.25) sepia(.35) hue-rotate(175deg) saturate(2.3) brightness(.9);transition:filter .45s ease}
+.pthumb img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1);transition:filter .45s ease}
 .pcard:hover .pthumb img,.pcard:focus-visible .pthumb img{filter:none}
 .pthumb::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0) 60%)}
 @media(prefers-reduced-motion:reduce){.pthumb img{transition:none}}
@@ -332,7 +335,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 <body>
 <div class="page"><svg class="wm bgl" viewBox="0 0 1653 1909" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c0cf"/><stop offset="1" stop-color="#d9e4eb"/></linearGradient></defs><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" fill-rule="evenodd" fill="url(#g)"/></svg>
 <div class="w">
-<header id="top"><svg class="logo" viewBox="0 0 338.6 100" role="img" aria-label="Planificar Proyectos"><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" transform="scale(0.052383)" fill-rule="evenodd" fill="currentColor"/><text x="102.6" y="46" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="400" font-size="33" fill="currentColor">PLANIFICAR</text><text x="102.6" y="86" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="600" font-size="33" fill="currentColor">PROYECTOS</text></svg><nav><a class="home" href="#top" aria-label="Inicio"><svg class="hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Inicio</span></a><a href="#servicios">Servicios</a><a href="#quienes-somos">Quiénes somos</a><a href="#proyectos">Proyectos</a><a class="cta" href="#contacto">Contacto</a></nav></header>
+<header id="top"><svg class="logo" viewBox="0 0 338.6 100" role="img" aria-label="Planificar Proyectos"><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" transform="scale(0.052383)" fill-rule="evenodd" fill="currentColor"/><text x="102.6" y="46" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="400" font-size="33" fill="currentColor">PLANIFICAR</text><text x="102.6" y="86" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="600" font-size="33" fill="currentColor">PROYECTOS</text></svg><nav><div class="nav-scroll"><a class="home" href="#top" aria-label="Inicio"><svg class="hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Inicio</span></a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#quienes-somos">Quiénes somos</a></div><a class="cta" href="#contacto">Contacto</a></nav></header>
 <section class="hero ld" style="--d:1" aria-roledescription="carrusel" aria-label="Presentación de la empresa">
 <div class="slides" id="hs">
 <div class="slide on" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
@@ -354,18 +357,6 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 <div class="band dark" id="servicios"><div class="sec rv"><span class="k">Servicios</span></div>
 <div class="grid"><div class="sv rv" style="--d:0"><span class="n">01</span><div><h3>Diseño técnico</h3><p>Redes hidráulicas, diseño estructural, gas, red contra incendios y detección.</p></div></div><div class="sv rv" style="--d:1"><span class="n">02</span><div><h3>Diseño arquitectónico y BIM</h3><p>Proyectos residenciales, comerciales e institucionales, coordinados en modelo BIM.</p></div></div><div class="sv rv" style="--d:2"><span class="n">03</span><div><h3>Construcción y adecuaciones</h3><p>Obra civil, remodelaciones y adecuaciones locativas.</p></div></div><div class="sv rv" style="--d:0"><span class="n">04</span><div><h3>Interventoría y supervisión</h3><p>Control técnico, de calidad y presupuestal de la obra.</p></div></div><div class="sv rv" style="--d:1"><span class="n">05</span><div><h3>Servicios complementarios</h3><p>Metalmecánica y ventanería para proyectos nuevos y existentes.</p></div></div><div class="sv rv" style="--d:2"><span class="n">06</span><div><h3>Consultoría</h3><p>Estudios previos, presupuestos y apoyo a la estructuración de proyectos.</p></div></div></div>
 <a class="up" href="#top">↑ Volver al menú</a></div>
-<div class="band tint" id="quienes-somos"><div class="sec rv"><span class="k">Quiénes somos</span></div>
-<div class="tabs rv" role="tablist" aria-label="Quiénes somos">
-<button class="tab on" type="button" role="tab" aria-selected="true" data-panel="trabajo">Cómo trabajamos</button>
-<button class="tab" type="button" role="tab" aria-selected="false" data-panel="valores">Nuestros valores</button>
-</div>
-<div class="tabpanel on" data-panel="trabajo">
-<ol class="bp"><li class="rv" style="--d:0"><span class="n">01</span><div><h3>Escuchamos antes de trazar</h3><p>Visita técnica, levantamiento del sitio y conversación con quien va a usar el espacio. El diseño parte de datos medidos, no de supuestos.</p></div></li><li class="rv" style="--d:1"><span class="n">02</span><div><h3>Alcance por escrito</h3><p>Cada propuesta detalla entregables, cronograma y forma de pago. Usted sabe qué recibe y cuándo, antes de firmar.</p></div></li><li class="rv" style="--d:2"><span class="n">03</span><div><h3>Un solo modelo coordinado</h3><p>Arquitectura, estructura y redes viven en un mismo modelo BIM. Las interferencias se resuelven en pantalla, no en obra.</p></div></li><li class="rv" style="--d:0"><span class="n">04</span><div><h3>Presupuesto trazable</h3><p>Las cantidades salen del modelo y cada precio tiene su análisis unitario. Cualquier cambio se ve reflejado en el valor.</p></div></li><li class="rv" style="--d:1"><span class="n">05</span><div><h3>Obra con bitácora y control de calidad</h3><p>Registro diario e informe semanal con fotos y avance. Pruebas de presión en redes, control de materiales y listas de chequeo antes de tapar cualquier trabajo.</p></div></li><li class="rv" style="--d:2"><span class="n">06</span><div><h3>Entrega completa</h3><p>Planos récord, memorias, manuales de uso y garantía. El proyecto queda documentado para su mantenimiento.</p></div></li></ol>
-</div>
-<div class="tabpanel" data-panel="valores" hidden>
-<ol class="bp"><li class="rv" style="--d:0"><span class="n">01</span><div><h3>Integridad</h3><p>[BORRADOR] Cumplimos lo que prometemos, en plazos y en presupuesto.</p></div></li><li class="rv" style="--d:1"><span class="n">02</span><div><h3>Calidad técnica</h3><p>[BORRADOR] Cada diseño y cada obra siguen la norma y el detalle correcto, sin atajos.</p></div></li><li class="rv" style="--d:2"><span class="n">03</span><div><h3>Compromiso con el cliente</h3><p>[BORRADOR] Escuchamos primero, diseñamos después. Su proyecto, no una plantilla.</p></div></li><li class="rv" style="--d:0"><span class="n">04</span><div><h3>Trabajo en equipo</h3><p>[BORRADOR] Arquitectos, ingenieros y constructores coordinados en un mismo modelo.</p></div></li><li class="rv" style="--d:1"><span class="n">05</span><div><h3>Mejora continua</h3><p>[BORRADOR] Aprendemos de cada proyecto para hacer mejor el siguiente.</p></div></li><li class="rv" style="--d:2"><span class="n">06</span><div><h3>Responsabilidad</h3><p>[BORRADOR] Con las personas, el presupuesto y el entorno donde construimos.</p></div></li></ol>
-</div>
-<a class="up" href="#top">↑ Volver al menú</a></div>
 <div class="band tint" id="proyectos"><div class="sec rv"><span class="k">Nuestros proyectos</span></div>
 <div class="pslider rv">
 <div class="ptrack" id="ptrack">
@@ -383,7 +374,18 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 </div>
 <div class="pnav"><button class="pprev" type="button" aria-label="Proyectos anteriores">‹</button><button class="pnext" type="button" aria-label="Proyectos siguientes">›</button></div>
 </div>
-<p class="pnote">Imágenes de ejemplo — pendiente reemplazar con fotos reales de cada proyecto.</p>
+<a class="up" href="#top">↑ Volver al menú</a></div>
+<div class="band tint" id="quienes-somos"><div class="sec rv"><span class="k">Quiénes somos</span></div>
+<div class="tabs rv" role="tablist" aria-label="Quiénes somos">
+<button class="tab on" type="button" role="tab" aria-selected="true" data-panel="trabajo">Cómo trabajamos</button>
+<button class="tab" type="button" role="tab" aria-selected="false" data-panel="valores">Nuestros valores</button>
+</div>
+<div class="tabpanel on" data-panel="trabajo">
+<ol class="bp"><li class="rv" style="--d:0"><span class="n">01</span><div><h3>Escuchamos antes de trazar</h3><p>Visita técnica, levantamiento del sitio y conversación con quien va a usar el espacio. El diseño parte de datos medidos, no de supuestos.</p></div></li><li class="rv" style="--d:1"><span class="n">02</span><div><h3>Alcance por escrito</h3><p>Cada propuesta detalla entregables, cronograma y forma de pago. Usted sabe qué recibe y cuándo, antes de firmar.</p></div></li><li class="rv" style="--d:2"><span class="n">03</span><div><h3>Un solo modelo coordinado</h3><p>Arquitectura, estructura y redes viven en un mismo modelo BIM. Las interferencias se resuelven en pantalla, no en obra.</p></div></li><li class="rv" style="--d:0"><span class="n">04</span><div><h3>Presupuesto trazable</h3><p>Las cantidades salen del modelo y cada precio tiene su análisis unitario. Cualquier cambio se ve reflejado en el valor.</p></div></li><li class="rv" style="--d:1"><span class="n">05</span><div><h3>Obra con bitácora y control de calidad</h3><p>Registro diario e informe semanal con fotos y avance. Pruebas de presión en redes, control de materiales y listas de chequeo antes de tapar cualquier trabajo.</p></div></li><li class="rv" style="--d:2"><span class="n">06</span><div><h3>Entrega completa</h3><p>Planos récord, memorias, manuales de uso y garantía. El proyecto queda documentado para su mantenimiento.</p></div></li></ol>
+</div>
+<div class="tabpanel" data-panel="valores" hidden>
+<ol class="bp"><li class="rv" style="--d:0"><span class="n">01</span><div><h3>Integridad</h3><p>[BORRADOR] Cumplimos lo que prometemos, en plazos y en presupuesto.</p></div></li><li class="rv" style="--d:1"><span class="n">02</span><div><h3>Calidad técnica</h3><p>[BORRADOR] Cada diseño y cada obra siguen la norma y el detalle correcto, sin atajos.</p></div></li><li class="rv" style="--d:2"><span class="n">03</span><div><h3>Compromiso con el cliente</h3><p>[BORRADOR] Escuchamos primero, diseñamos después. Su proyecto, no una plantilla.</p></div></li><li class="rv" style="--d:0"><span class="n">04</span><div><h3>Trabajo en equipo</h3><p>[BORRADOR] Arquitectos, ingenieros y constructores coordinados en un mismo modelo.</p></div></li><li class="rv" style="--d:1"><span class="n">05</span><div><h3>Mejora continua</h3><p>[BORRADOR] Aprendemos de cada proyecto para hacer mejor el siguiente.</p></div></li><li class="rv" style="--d:2"><span class="n">06</span><div><h3>Responsabilidad</h3><p>[BORRADOR] Con las personas, el presupuesto y el entorno donde construimos.</p></div></li></ol>
+</div>
 <a class="up" href="#top">↑ Volver al menú</a></div>
 <div class="band deep" id="contacto"><div class="sec rv"><span class="k">Contacto</span></div>
 <section class="contact rv"><div><h2>Cuéntenos su proyecto</h2><p>Respondemos con una propuesta de alcance, cronograma y valor.</p></div>
