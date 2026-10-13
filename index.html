@@ -140,7 +140,7 @@ html.embed header{position:relative}
 .band.dark .sv p{color:var(--muted)}.band.dark .n{color:var(--faint)}
 .band.tint .sec::after{background:var(--line)}
 .band.tint .bp{padding-bottom:24px}
-.band.deep{padding-top:24px}
+.band.deep{padding-top:14px}
 .band.deep .contact{color:var(--ink);padding:32px clamp(20px,4vw,40px);margin:0 0 24px}
 .band.deep .contact h2{color:var(--brand)}
 .band.deep .contact p{color:var(--muted);opacity:1}
@@ -163,15 +163,16 @@ header.scrolled{box-shadow:0 0 0 100vmax rgba(244,247,249,.97),0 10px 24px -14px
 .hero,.band{position:relative;background:rgba(182,212,235,.48);border:1px solid rgba(205,228,243,.9);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border-radius:24px;box-shadow:0 2px 4px rgba(20,40,54,.04),0 24px 60px -12px rgba(20,40,54,.16)}
 .hero{margin-top:32px;padding:56px clamp(20px,4vw,44px) 48px;min-height:min(56vh,540px);display:flex;flex-direction:column;justify-content:center;gap:44px}
 .band{margin-top:32px;padding:32px clamp(20px,4vw,44px) 8px!important}
-.band.deep{margin-bottom:32px;background:rgba(132,175,212,.58)!important;border:1px solid rgba(190,218,238,.9)}
+.band.deep{margin-bottom:20px;margin-top:20px;background:rgba(160,196,225,.48)!important;border:1px solid rgba(200,225,243,.9)}
 .band.dark .grid,.band.deep .contact,.ficha{background:transparent;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-radius:0}
 .band.dark .grid{padding:0;margin:0 0 8px}
-.band.deep .contact{padding:8px 0 24px;margin:0}
+.band.deep .contact{padding:4px 0 10px;margin:0}
 .ficha{background:rgba(186,215,236,.65);border:1px solid rgba(205,228,243,.95);border-radius:18px}
 .band.tint .bp li{background:rgba(186,215,236,.66);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 2px rgba(20,40,54,.04),0 6px 18px rgba(20,40,54,.06)}
 .band.tint .bp{padding-bottom:24px}
 .up{margin:0 0 24px}
-.band.deep footer{padding-bottom:20px}
+.band.deep footer{padding-bottom:10px;padding-top:6px}
+.band.deep .up{margin-bottom:14px}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.hero,.band{background:rgba(255,255,255,.94)}}
 @media(max-width:760px){.hero,.band{border-radius:18px;margin-top:20px}.hero{padding:28px 20px}.band{padding:24px 18px 4px!important}.wm.bgl{height:70vh}}
 
@@ -287,12 +288,49 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 @keyframes fill{from{width:0}to{width:100%}}
 @media(max-width:760px){.nav-s{align-items:center}.prog{width:140px}}
 @media(prefers-reduced-motion:reduce){.slide.on .hero-main>*,.slide.on .ficha,.slide.on .chips li,.slide.on .checks li{animation:none}}
+
+/* pestañas Quiénes somos */
+.tabs{display:flex;gap:4px;margin:4px 0 20px;border-bottom:1px solid var(--line)}
+.tab{background:transparent;color:var(--muted);font-weight:600;font-size:14.5px;padding:10px 6px;margin-bottom:-1px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--brand);border-color:var(--brand)}
+.tabpanel[hidden]{display:none}
+
+/* slider de proyectos */
+.pslider{position:relative;padding:4px 0 8px}
+.ptrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:none;padding:4px 2px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ptrack::-webkit-scrollbar{display:none}
+.pcard{position:relative;flex:0 0 auto;width:min(240px,70vw);border-radius:16px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:flex-end;padding:14px;text-align:left;box-shadow:var(--shadow);scroll-snap-align:start;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.04),0 16px 36px rgba(0,0,0,.09)}
+.pthumb{position:absolute;inset:0;background:#0e1c26}
+.pthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.pthumb::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0) 60%)}
+.pname{position:relative;color:#fff;font-weight:600;font-size:15px}
+.pnav{display:flex;gap:10px;justify-content:flex-end;margin-top:-6px}
+.pnav button{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.7);border:1px solid rgba(205,228,243,.9);color:var(--brand);font-size:18px;display:grid;place-items:center;transition:background .2s,transform .2s}
+.pnav button:hover{background:#fff;transform:translateY(-1px)}
+.pnav button:disabled{opacity:.35;pointer-events:none}
+.pnote{margin:0 0 20px;font-size:12.5px;color:var(--faint);font-style:italic}
+@media(max-width:760px){.pnav{justify-content:center}}
+
+/* visor de imágenes */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(10,18,24,.9);display:flex;align-items:center;justify-content:center;padding:24px}
+.lightbox[hidden]{display:none}
+.lb-media{width:min(880px,86vw);aspect-ratio:16/10;border-radius:16px;background:#0e1c26;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:600;letter-spacing:.02em;text-align:center;padding:0;overflow:hidden}
+.lb-media img{width:100%;height:100%;object-fit:cover;display:block}
+.lb-cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#cfe0ea;font-size:13px}
+.lb-close,.lb-prev,.lb-next{position:absolute;background:rgba(255,255,255,.12);color:#fff;border-radius:50%;width:42px;height:42px;display:grid;place-items:center;font-size:18px;transition:background .2s}
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.22)}
+.lb-close{top:20px;right:20px}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+@media(max-width:760px){.lb-media{width:90vw;font-size:13px}.lb-prev{left:8px}.lb-next{right:8px}}
 </style>
 </head>
 <body>
 <div class="page"><svg class="wm bgl" viewBox="0 0 1653 1909" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c0cf"/><stop offset="1" stop-color="#d9e4eb"/></linearGradient></defs><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" fill-rule="evenodd" fill="url(#g)"/></svg>
 <div class="w">
-<header id="top"><svg class="logo" viewBox="0 0 338.6 100" role="img" aria-label="Planificar Proyectos"><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" transform="scale(0.052383)" fill-rule="evenodd" fill="currentColor"/><text x="102.6" y="46" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="400" font-size="33" fill="currentColor">PLANIFICAR</text><text x="102.6" y="86" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="600" font-size="33" fill="currentColor">PROYECTOS</text></svg><nav><a class="home" href="#top" aria-label="Inicio"><svg class="hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Inicio</span></a><a href="#servicios">Servicios</a><a href="#practicas">Cómo trabajamos</a><a class="cta" href="#contacto">Contacto</a></nav></header>
+<header id="top"><svg class="logo" viewBox="0 0 338.6 100" role="img" aria-label="Planificar Proyectos"><path d="M0,478L826,0L910,49L910,573L167,1003L167,1335L371,1453L371,1120L1115,692L1115,263L1198,215L1653,478L1653,1432L826,1909L743,1860L743,1335L1486,907L1486,573L1282,456L1282,788L538,1217L538,1637L455,1686L0,1432ZM167,573L743,241L743,478L167,810ZM910,1432L1486,1099L1486,1335L910,1667Z" transform="scale(0.052383)" fill-rule="evenodd" fill="currentColor"/><text x="102.6" y="46" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="400" font-size="33" fill="currentColor">PLANIFICAR</text><text x="102.6" y="86" textLength="236" lengthAdjust="spacing" font-family="Jost, sans-serif" font-weight="600" font-size="33" fill="currentColor">PROYECTOS</text></svg><nav><a class="home" href="#top" aria-label="Inicio"><svg class="hi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Inicio</span></a><a href="#servicios">Servicios</a><a href="#quienes-somos">Quiénes somos</a><a href="#proyectos">Proyectos</a><a class="cta" href="#contacto">Contacto</a></nav></header>
 <section class="hero ld" style="--d:1" aria-roledescription="carrusel" aria-label="Presentación de la empresa">
 <div class="slides" id="hs">
 <div class="slide on" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
@@ -314,14 +352,49 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 <div class="band dark" id="servicios"><div class="sec rv"><span class="k">Servicios</span></div>
 <div class="grid"><div class="sv rv" style="--d:0"><span class="n">01</span><div><h3>Diseño técnico</h3><p>Redes hidráulicas, diseño estructural, gas, red contra incendios y detección.</p></div></div><div class="sv rv" style="--d:1"><span class="n">02</span><div><h3>Diseño arquitectónico y BIM</h3><p>Proyectos residenciales, comerciales e institucionales, coordinados en modelo BIM.</p></div></div><div class="sv rv" style="--d:2"><span class="n">03</span><div><h3>Construcción y adecuaciones</h3><p>Obra civil, remodelaciones y adecuaciones locativas.</p></div></div><div class="sv rv" style="--d:0"><span class="n">04</span><div><h3>Interventoría y supervisión</h3><p>Control técnico, de calidad y presupuestal de la obra.</p></div></div><div class="sv rv" style="--d:1"><span class="n">05</span><div><h3>Servicios complementarios</h3><p>Metalmecánica y ventanería para proyectos nuevos y existentes.</p></div></div><div class="sv rv" style="--d:2"><span class="n">06</span><div><h3>Consultoría</h3><p>Estudios previos, presupuestos y apoyo a la estructuración de proyectos.</p></div></div></div>
 <a class="up" href="#top">↑ Volver al menú</a></div>
-<div class="band tint" id="practicas"><div class="sec rv"><span class="k">Cómo trabajamos · Buenas prácticas</span></div>
+<div class="band tint" id="quienes-somos"><div class="sec rv"><span class="k">Quiénes somos</span></div>
+<div class="tabs rv" role="tablist" aria-label="Quiénes somos">
+<button class="tab on" type="button" role="tab" aria-selected="true" data-panel="trabajo">Cómo trabajamos</button>
+<button class="tab" type="button" role="tab" aria-selected="false" data-panel="valores">Nuestros valores</button>
+</div>
+<div class="tabpanel on" data-panel="trabajo">
 <ol class="bp"><li class="rv" style="--d:0"><span class="n">01</span><div><h3>Escuchamos antes de trazar</h3><p>Visita técnica, levantamiento del sitio y conversación con quien va a usar el espacio. El diseño parte de datos medidos, no de supuestos.</p></div></li><li class="rv" style="--d:1"><span class="n">02</span><div><h3>Alcance por escrito</h3><p>Cada propuesta detalla entregables, cronograma y forma de pago. Usted sabe qué recibe y cuándo, antes de firmar.</p></div></li><li class="rv" style="--d:2"><span class="n">03</span><div><h3>Un solo modelo coordinado</h3><p>Arquitectura, estructura y redes viven en un mismo modelo BIM. Las interferencias se resuelven en pantalla, no en obra.</p></div></li><li class="rv" style="--d:0"><span class="n">04</span><div><h3>Presupuesto trazable</h3><p>Las cantidades salen del modelo y cada precio tiene su análisis unitario. Cualquier cambio se ve reflejado en el valor.</p></div></li><li class="rv" style="--d:1"><span class="n">05</span><div><h3>Obra con bitácora y control de calidad</h3><p>Registro diario e informe semanal con fotos y avance. Pruebas de presión en redes, control de materiales y listas de chequeo antes de tapar cualquier trabajo.</p></div></li><li class="rv" style="--d:2"><span class="n">06</span><div><h3>Entrega completa</h3><p>Planos récord, memorias, manuales de uso y garantía. El proyecto queda documentado para su mantenimiento.</p></div></li></ol>
+</div>
+<div class="tabpanel" data-panel="valores" hidden>
+<ol class="bp"><li class="rv" style="--d:0"><span class="n">01</span><div><h3>Integridad</h3><p>[BORRADOR] Cumplimos lo que prometemos, en plazos y en presupuesto.</p></div></li><li class="rv" style="--d:1"><span class="n">02</span><div><h3>Calidad técnica</h3><p>[BORRADOR] Cada diseño y cada obra siguen la norma y el detalle correcto, sin atajos.</p></div></li><li class="rv" style="--d:2"><span class="n">03</span><div><h3>Compromiso con el cliente</h3><p>[BORRADOR] Escuchamos primero, diseñamos después. Su proyecto, no una plantilla.</p></div></li><li class="rv" style="--d:0"><span class="n">04</span><div><h3>Trabajo en equipo</h3><p>[BORRADOR] Arquitectos, ingenieros y constructores coordinados en un mismo modelo.</p></div></li><li class="rv" style="--d:1"><span class="n">05</span><div><h3>Mejora continua</h3><p>[BORRADOR] Aprendemos de cada proyecto para hacer mejor el siguiente.</p></div></li><li class="rv" style="--d:2"><span class="n">06</span><div><h3>Responsabilidad</h3><p>[BORRADOR] Con las personas, el presupuesto y el entorno donde construimos.</p></div></li></ol>
+</div>
 <a class="up" href="#top">↑ Volver al menú</a></div>
-<div class="band deep" id="contacto"><div class="sec rv"><span class="n">01</span><span class="k">Contacto</span></div>
+<div class="band tint" id="proyectos"><div class="sec rv"><span class="k">Nuestros proyectos</span></div>
+<div class="pslider rv">
+<div class="ptrack" id="ptrack">
+<button class="pcard" type="button" data-name="Casa Los Cerros [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/2062736/pexels-photo-2062736.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Fachada"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/2062736/pexels-photo-2062736.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Casa Los Cerros</span></button>
+<button class="pcard" type="button" data-name="Edificio Mirador [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/2497641/pexels-photo-2497641.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Fachada"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/2497641/pexels-photo-2497641.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Edificio Mirador</span></button>
+<button class="pcard" type="button" data-name="Bodega Industrial Norte [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Vista general"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Bodega Industrial Norte</span></button>
+<button class="pcard" type="button" data-name="Local Comercial Plaza [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/3184663/pexels-photo-3184663.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Interior"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/3184663/pexels-photo-3184663.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Local Comercial Plaza</span></button>
+<button class="pcard" type="button" data-name="Remodelación Apto 502 [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/6908500/pexels-photo-6908500.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Interior"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/6908500/pexels-photo-6908500.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Remodelación Apto 502</span></button>
+<button class="pcard" type="button" data-name="Colegio San Rafael [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/2445320/pexels-photo-2445320.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"En obra"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/2445320/pexels-photo-2445320.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Colegio San Rafael</span></button>
+<button class="pcard" type="button" data-name="Conjunto Residencial Alameda [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/4906392/pexels-photo-4906392.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Vista general"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/4906392/pexels-photo-4906392.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Conjunto Residencial Alameda</span></button>
+<button class="pcard" type="button" data-name="Oficinas Torre Central [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/2497641/pexels-photo-2497641.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Fachada"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/2497641/pexels-photo-2497641.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Oficinas Torre Central</span></button>
+<button class="pcard" type="button" data-name="Restaurante El Puerto [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/4450335/pexels-photo-4450335.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Salón"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/4450335/pexels-photo-4450335.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Restaurante El Puerto</span></button>
+<button class="pcard" type="button" data-name="Clínica San José [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/6129681/pexels-photo-6129681.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Interior"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/6129681/pexels-photo-6129681.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Clínica San José</span></button>
+<button class="pcard" type="button" data-name="Bodega Logística Sur [BORRADOR]" data-images='[{"src":"https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200","l":"Vista general"}]'><span class="pthumb"><img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200" alt="" loading="lazy"></span><span class="pname">Bodega Logística Sur</span></button>
+</div>
+<div class="pnav"><button class="pprev" type="button" aria-label="Proyectos anteriores">‹</button><button class="pnext" type="button" aria-label="Proyectos siguientes">›</button></div>
+</div>
+<p class="pnote">Imágenes de ejemplo — pendiente reemplazar con fotos reales de cada proyecto.</p>
+<a class="up" href="#top">↑ Volver al menú</a></div>
+<div class="band deep" id="contacto"><div class="sec rv"><span class="k">Contacto</span></div>
 <section class="contact rv"><div><h2>Cuéntenos su proyecto</h2><p>Respondemos con una propuesta de alcance, cronograma y valor.</p></div>
 <div class="cdata"><a class="cline" href="mailto:planificarproyectos@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4V6zm0 0l8 7 8-7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>planificarproyectos@gmail.com</span></a><a class="cline" href="tel:+573204451740"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>320 445 1740</span></a><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2C6.7 2.2 2.4 6.5 2.4 11.8c0 1.8.5 3.5 1.4 5L2.2 21.8l5.2-1.4c1.4.8 3 1.2 4.6 1.2 5.3 0 9.6-4.3 9.6-9.6S17.3 2.2 12 2.2zm5.6 13.6c-.2.6-1.2 1.2-1.7 1.3-.5.1-1 .1-3.4-.7-2.8-1-4.6-3.9-4.8-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.6 1.6.7 1.7.1.1.1.3 0 .5-.1.2-.2.3-.3.4l-.5.5c-.2.2-.3.4-.1.7.1.3.7 1.1 1.5 1.8 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1.2-.2.6-.7.8-1 .2-.3.4-.2.6-.1l1.5.7c.2.1.4.2.5.3.1.2.1.8-.1 1.4z" fill="currentColor"/></svg>Escribir por WhatsApp</a></div></section>
 <a class="up" href="#top">↑ Volver al menú</a><footer><span>Planificar Proyectos S.A.S.</span><span>Bogotá, Colombia</span></footer></div>
 </div></div>
+<div class="lightbox" id="lightbox" hidden>
+<button class="lb-close" type="button" aria-label="Cerrar">✕</button>
+<button class="lb-prev" type="button" aria-label="Anterior">‹</button>
+<div class="lb-media"></div>
+<button class="lb-next" type="button" aria-label="Siguiente">›</button>
+<div class="lb-cap"></div>
+</div>
 
 <script>
 (function(){
@@ -360,6 +433,57 @@ let x0=null;box.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;hold()
 box.addEventListener('touchend',e=>{const dx=x0===null?0:e.changedTouches[0].clientX-x0;x0=null;held=false;hero.classList.remove('hold');if(Math.abs(dx)>40)go(i+(dx<0?1:-1));else arm()});
 document.addEventListener('visibilitychange',()=>{document.hidden?hold():resume()});
 bar();arm();
+})();
+</script>
+<script>
+(function(){
+document.querySelectorAll('.tabs').forEach(tabs=>{
+ const section=tabs.closest('.band');
+ const btns=[...tabs.querySelectorAll('.tab')];
+ btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b?'true':'false')});
+  section.querySelectorAll('.tabpanel').forEach(p=>{const on=p.dataset.panel===b.dataset.panel;p.classList.toggle('on',on);p.hidden=!on});
+ }));
+});
+})();
+</script>
+<script>
+(function(){
+const grid=document.getElementById('ptrack');if(!grid)return;
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+[...grid.children].forEach(c=>grid.appendChild(c.cloneNode(true)));
+const lb=document.getElementById('lightbox'),media=lb.querySelector('.lb-media'),cap=lb.querySelector('.lb-cap');
+let imgs=[],idx=0,name='',last=null;
+function render(){const it=imgs[idx];media.innerHTML='';const img=document.createElement('img');img.src=it.src;img.alt=it.l;media.appendChild(img);cap.textContent=name+' · '+it.l+' ('+(idx+1)+'/'+imgs.length+')'}
+function open(card){name=card.dataset.name;imgs=JSON.parse(card.dataset.images);idx=0;last=card;lb.hidden=false;document.body.style.overflow='hidden';render();lb.querySelector('.lb-close').focus();pause()}
+function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus();resume()}
+grid.querySelectorAll('.pcard').forEach(c=>c.addEventListener('click',()=>open(c)));
+lb.querySelector('.lb-close').addEventListener('click',close);
+lb.addEventListener('click',e=>{if(e.target===lb)close()});
+lb.querySelector('.lb-prev').addEventListener('click',()=>{idx=(idx-1+imgs.length)%imgs.length;render()});
+lb.querySelector('.lb-next').addEventListener('click',()=>{idx=(idx+1)%imgs.length;render()});
+document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')lb.querySelector('.lb-prev').click();if(e.key==='ArrowRight')lb.querySelector('.lb-next').click()});
+const slider=grid.closest('.pslider'),pprev=slider.querySelector('.pprev'),pnext=slider.querySelector('.pnext');
+function step(){const c=grid.querySelector('.pcard');return c?c.getBoundingClientRect().width+16:260}
+let paused=false,t=null,resumeTimer=0;
+const DUR=3000;
+function advance(){
+ if(rm)return;
+ grid.scrollBy({left:step(),behavior:'smooth'});
+ setTimeout(()=>{const half=grid.scrollWidth/2;if(grid.scrollLeft>=half-4)grid.scrollLeft-=half},400);
+}
+function arm(){clearTimeout(t);if(paused||rm)return;t=setTimeout(()=>{advance();arm()},DUR)}
+function pause(){paused=true;clearTimeout(t)}
+function resume(){clearTimeout(resumeTimer);paused=false;arm()}
+function pauseThenResume(ms){pause();clearTimeout(resumeTimer);resumeTimer=setTimeout(resume,ms)}
+grid.addEventListener('mouseenter',pause);
+grid.addEventListener('mouseleave',()=>pauseThenResume(0));
+grid.addEventListener('touchstart',pause,{passive:true});
+grid.addEventListener('touchend',()=>pauseThenResume(1500),{passive:true});
+pprev.addEventListener('click',()=>{grid.scrollBy({left:-step()*2,behavior:'smooth'});pauseThenResume(2000)});
+pnext.addEventListener('click',()=>{grid.scrollBy({left:step()*2,behavior:'smooth'});pauseThenResume(2000)});
+document.addEventListener('visibilitychange',()=>{document.hidden?pause():resume()});
+arm();
 })();
 </script>
 </body>
