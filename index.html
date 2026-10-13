@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Planificar Proyectos S.A.S. · Diseño, consultoría y construcción</title>
-<meta name="description" content="Diseño arquitectónico, diseños técnicos (hidráulico, estructural, gas, RCI), consultoría BIM, construcción e interventoría. Turbaco, Bolívar.">
+<meta name="description" content="Diseño arquitectónico, diseños técnicos (hidráulico, estructural, gas, RCI), consultoría BIM, construcción e interventoría. Bogotá, Colombia.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&family=Manrope:wght@300;400;500;600&display=swap">
 <style>
@@ -54,9 +54,10 @@ h1{font-weight:300;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spaci
 .contact{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;background:var(--brand);color:var(--brand-ink);border-radius:18px;padding:32px clamp(20px,4vw,40px);margin-bottom:40px}
 .contact h2{font-weight:300;font-size:clamp(22px,3vw,30px);margin:0 0 6px;line-height:1.2}
 .contact p{margin:0;opacity:.8}
-.cdata{display:flex;flex-direction:column;gap:8px;font-size:15px}
-.cdata div{display:flex;align-items:center;gap:10px}
-.cdata button{background:rgba(255,255,255,.15);color:inherit;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600}
+.cdata{display:flex;flex-direction:column;align-items:flex-start;gap:14px;font-size:15px}
+.cline{display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.cline svg{width:18px;height:18px;flex:0 0 auto;color:var(--brand);background:#e6eef3;border-radius:50%;padding:4px;box-sizing:content-box}
+.cline:hover{text-decoration:underline}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-block:20px 32px;border-top:1px solid var(--line);font-size:13px;color:var(--faint)}
 @media(max-width:760px){nav a:not(.cta){display:none}nav{background:transparent;padding:0}.hero{grid-template-columns:1fr;padding-block:36px}.contact{grid-template-columns:1fr}.wm{height:700px;right:-300px;top:120px}.logo{height:36px}footer{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){}
@@ -76,7 +77,6 @@ nav a.on:not(.cta){background:var(--bg);color:var(--ink);box-shadow:0 1px 2px rg
 .sv{transition:background .25s}
 .sv h3{transition:color .25s}.sv:hover h3{color:var(--brand)}
 .wa{display:inline-flex;gap:6px;align-items:center}.wa i{font-style:normal;transition:transform .25s}.wa:hover i{transform:translate(3px,-3px)}
-.cdata button{transition:background .2s}.cdata button:hover{background:rgba(255,255,255,.25)}
 html.js .ld{opacity:0;transform:translateY(14px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*90ms + 80ms)}
 html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*70ms)}
 html.js .rv.in{opacity:1;transform:none}
@@ -144,8 +144,6 @@ html.embed header{position:relative}
 .band.deep .contact{color:var(--ink);padding:32px clamp(20px,4vw,40px);margin:0 0 24px}
 .band.deep .contact h2{color:var(--brand)}
 .band.deep .contact p{color:var(--muted);opacity:1}
-.cdata button,.band.deep .cdata button{background:var(--soft);color:var(--brand)}
-.cdata button:hover{background:var(--line)}
 .wa,.wa i{color:var(--brand)}
 .band.deep footer{border-top:1px solid var(--line);color:var(--faint)}
 .up,.band.dark .up,.band.tint .up,.band.deep .up{color:var(--brand);background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9);margin-top:0}
@@ -165,7 +163,7 @@ header.scrolled{box-shadow:0 0 0 100vmax rgba(244,247,249,.97),0 10px 24px -14px
 .hero,.band{position:relative;background:rgba(182,212,235,.48);border:1px solid rgba(205,228,243,.9);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border-radius:24px;box-shadow:0 2px 4px rgba(20,40,54,.04),0 24px 60px -12px rgba(20,40,54,.16)}
 .hero{margin-top:32px;padding:56px clamp(20px,4vw,44px) 48px;min-height:min(56vh,540px);display:flex;flex-direction:column;justify-content:center;gap:44px}
 .band{margin-top:32px;padding:32px clamp(20px,4vw,44px) 8px!important}
-.band.deep{margin-bottom:32px}
+.band.deep{margin-bottom:32px;background:rgba(132,175,212,.58)!important;border:1px solid rgba(190,218,238,.9)}
 .band.dark .grid,.band.deep .contact,.ficha{background:transparent;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-radius:0}
 .band.dark .grid{padding:0;margin:0 0 8px}
 .band.deep .contact{padding:8px 0 24px;margin:0}
@@ -221,9 +219,9 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 .wa-btn{display:inline-flex;align-items:center;gap:8px}
 .wa-btn svg{width:18px;height:18px}
 .ficha{line-height:1.5}
-.chips{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.chips li{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.75);border:1px solid #dde5eb;border-radius:999px;padding:6px 12px 6px 9px;font-size:13px;color:var(--ink)}
-.chips svg{width:16px;height:16px;color:var(--brand);flex:0 0 auto}
+.chips{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:9px}
+.chips li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink)}
+.chips svg{width:18px;height:18px;color:var(--brand);flex:0 0 auto;background:#e6eef3;border-radius:50%;padding:2px}
 .stats{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap}
 .stats div{display:flex;flex-direction:column}
 .stats b{font-weight:300;font-size:30px;color:var(--brand);line-height:1.1}
@@ -240,7 +238,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
  .btns a{flex:1 1 100%;text-align:center;justify-content:center;padding:12px 14px}
  .btns a.b2{padding:9px 14px}
  .sign{margin-top:18px}
- .chips li{font-size:12.5px;padding:5px 10px 5px 8px}
+ .chips li{font-size:13px}
 }
 
 /* hero carrusel */
@@ -261,7 +259,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 .dot:hover{background:#9fb2c0}
 @media(max-width:760px){
  .slide{grid-template-columns:1fr;gap:16px}
- .ht{font-size:28px;margin:10px 0}
+ .ht{font-size:28px;margin:10px 0;font-weight:500}
  .hero-foot{grid-template-columns:1fr;gap:14px;margin-top:16px}
  .dots{justify-content:center}
 }
@@ -310,7 +308,7 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 <div class="hero-side"><div class="ficha"><div class="k">En obra</div><ul class="checks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bitácora diaria</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Informe semanal con fotos</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pruebas de calidad</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Entrega con planos récord</span></li></ul></div></div>
 </div>
 </div>
-<div class="hero-foot"><div class="btns"><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c.3 2 2.1 4 4.5 4.6l1.2-1.2 1.8.8-.4 1.6c-3.6.3-7.3-3.2-7.4-6.9l1.6-.4.8 1.8z" fill="currentColor"/></svg>Cotizar por WhatsApp</a><a class="b2" href="#servicios">Ver servicios</a></div><div class="nav-s"><div class="dots" role="group" aria-label="Elegir diapositiva"><button class="dot on" type="button" aria-label="Ver diapositiva 1" aria-current="true"></button><button class="dot" type="button" aria-label="Ver diapositiva 2"></button><button class="dot" type="button" aria-label="Ver diapositiva 3"></button></div><div class="prog" aria-hidden="true"><i></i></div></div></div>
+<div class="hero-foot"><div class="btns"><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2C6.7 2.2 2.4 6.5 2.4 11.8c0 1.8.5 3.5 1.4 5L2.2 21.8l5.2-1.4c1.4.8 3 1.2 4.6 1.2 5.3 0 9.6-4.3 9.6-9.6S17.3 2.2 12 2.2zm5.6 13.6c-.2.6-1.2 1.2-1.7 1.3-.5.1-1 .1-3.4-.7-2.8-1-4.6-3.9-4.8-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.6 1.6.7 1.7.1.1.1.3 0 .5-.1.2-.2.3-.3.4l-.5.5c-.2.2-.3.4-.1.7.1.3.7 1.1 1.5 1.8 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1.2-.2.6-.7.8-1 .2-.3.4-.2.6-.1l1.5.7c.2.1.4.2.5.3.1.2.1.8-.1 1.4z" fill="currentColor"/></svg>Cotizar por WhatsApp</a><a class="b2" href="#servicios">Ver servicios</a></div><div class="nav-s"><div class="dots" role="group" aria-label="Elegir diapositiva"><button class="dot on" type="button" aria-label="Ver diapositiva 1" aria-current="true"></button><button class="dot" type="button" aria-label="Ver diapositiva 2"></button><button class="dot" type="button" aria-label="Ver diapositiva 3"></button></div><div class="prog" aria-hidden="true"><i></i></div></div></div>
 <div class="stats" hidden><div><b data-stat="anios">—</b><span>años de experiencia</span></div><div><b data-stat="proyectos">—</b><span>proyectos entregados</span></div><div><b data-stat="m2">—</b><span>m² diseñados</span></div></div>
 </section>
 <div class="band dark" id="servicios"><div class="sec rv"><span class="k">Servicios</span></div>
@@ -319,17 +317,11 @@ nav .home .hi{width:16px;height:16px;flex:0 0 auto}
 <div class="band tint" id="practicas"><div class="sec rv"><span class="k">Cómo trabajamos · Buenas prácticas</span></div>
 <ol class="bp"><li class="rv" style="--d:0"><span class="n">01</span><div><h3>Escuchamos antes de trazar</h3><p>Visita técnica, levantamiento del sitio y conversación con quien va a usar el espacio. El diseño parte de datos medidos, no de supuestos.</p></div></li><li class="rv" style="--d:1"><span class="n">02</span><div><h3>Alcance por escrito</h3><p>Cada propuesta detalla entregables, cronograma y forma de pago. Usted sabe qué recibe y cuándo, antes de firmar.</p></div></li><li class="rv" style="--d:2"><span class="n">03</span><div><h3>Un solo modelo coordinado</h3><p>Arquitectura, estructura y redes viven en un mismo modelo BIM. Las interferencias se resuelven en pantalla, no en obra.</p></div></li><li class="rv" style="--d:0"><span class="n">04</span><div><h3>Presupuesto trazable</h3><p>Las cantidades salen del modelo y cada precio tiene su análisis unitario. Cualquier cambio se ve reflejado en el valor.</p></div></li><li class="rv" style="--d:1"><span class="n">05</span><div><h3>Obra con bitácora y control de calidad</h3><p>Registro diario e informe semanal con fotos y avance. Pruebas de presión en redes, control de materiales y listas de chequeo antes de tapar cualquier trabajo.</p></div></li><li class="rv" style="--d:2"><span class="n">06</span><div><h3>Entrega completa</h3><p>Planos récord, memorias, manuales de uso y garantía. El proyecto queda documentado para su mantenimiento.</p></div></li></ol>
 <a class="up" href="#top">↑ Volver al menú</a></div>
-<div class="band deep" id="contacto"><section class="contact rv"><div><h2>Cuéntenos su proyecto</h2><p>Respondemos con una propuesta de alcance, cronograma y valor.</p></div>
-<div class="cdata"><div><span id="c-mail">planificarproyectos@gmail.com</span><button data-copy="planificarproyectos@gmail.com">Copiar</button></div><div><span>320 445 1740</span><button data-copy="3204451740">Copiar</button></div><div><a href="https://wa.me/573204451740" target="_blank" rel="noopener noreferrer" class="wa">Escribir por WhatsApp <i>↗</i></a></div></div></section>
-<a class="up" href="#top">↑ Volver al menú</a><footer><span>Planificar Proyectos S.A.S.</span><span>Turbaco, Bolívar · Colombia</span></footer></div>
+<div class="band deep" id="contacto"><div class="sec rv"><span class="n">01</span><span class="k">Contacto</span></div>
+<section class="contact rv"><div><h2>Cuéntenos su proyecto</h2><p>Respondemos con una propuesta de alcance, cronograma y valor.</p></div>
+<div class="cdata"><a class="cline" href="mailto:planificarproyectos@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4V6zm0 0l8 7 8-7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>planificarproyectos@gmail.com</span></a><a class="cline" href="tel:+573204451740"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8 8 0 0 1 8.3 18.7L4 20l1.3-4.2A8 8 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>320 445 1740</span></a><a class="b1 wa-btn" href="https://wa.me/573204451740?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Planificar%20Proyectos" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2C6.7 2.2 2.4 6.5 2.4 11.8c0 1.8.5 3.5 1.4 5L2.2 21.8l5.2-1.4c1.4.8 3 1.2 4.6 1.2 5.3 0 9.6-4.3 9.6-9.6S17.3 2.2 12 2.2zm5.6 13.6c-.2.6-1.2 1.2-1.7 1.3-.5.1-1 .1-3.4-.7-2.8-1-4.6-3.9-4.8-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.6 1.6.7 1.7.1.1.1.3 0 .5-.1.2-.2.3-.3.4l-.5.5c-.2.2-.3.4-.1.7.1.3.7 1.1 1.5 1.8 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1.2-.2.6-.7.8-1 .2-.3.4-.2.6-.1l1.5.7c.2.1.4.2.5.3.1.2.1.8-.1 1.4z" fill="currentColor"/></svg>Escribir por WhatsApp</a></div></section>
+<a class="up" href="#top">↑ Volver al menú</a><footer><span>Planificar Proyectos S.A.S.</span><span>Bogotá, Colombia</span></footer></div>
 </div></div>
-<script>
-(function(){
-document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>{const done=()=>{b.textContent='Copiado';setTimeout(()=>b.textContent='Copiar',1500)};const sel=()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Seleccionado';setTimeout(()=>b.textContent='Copiar',1500)};try{navigator.clipboard.writeText(b.dataset.copy).then(done,sel)}catch(e){sel()}});
-})();
-</script>
-
-
 
 <script>
 (function(){
